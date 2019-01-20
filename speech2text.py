@@ -4,12 +4,6 @@ import speech_recognition as sr
 # Limited to 50 requests per day
 # Audio input needs to be wav, output is text
 
-# To-Do:
-## Implement a way to make paragraphs and dots where need be.
-## Define a way to get the language automatically.
-## Get the audio file size (in time) and check if the program needs to
-## consider more than 45 seconds (max time is 60seconds per request i believe).
-
 r = sr.Recognizer()
 
 text = {}
@@ -31,5 +25,11 @@ with som as source:
       #    i += 1
       #    del audio
 
+transcript = ""
+
 for key, value in text.items():
    print(value, end = " ")
+   transcript += value + " "
+
+with open("transcript.txt", "w") as f:
+    f.write(transcript)
