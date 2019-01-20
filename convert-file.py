@@ -1,16 +1,28 @@
 #!/usr/bin/python
 
-# Receives as an argument, an .mp4 file and converts it into .wav.
-# Faster to make it speech into text later on.
+# Receives as an argument, an .mp4 file and converts it into .wav
+# IMmplemented a way to split audio file into chunks of 30seconds
+
+#TO-DO:
+#Break the audio file into chunks of 30seconds
 
 import subprocess
 import sys
+import os
 
+newFile = "source/new-audio.wav"
 filePath = sys.argv[1]
 
-def convertFile(filePath):
-   command = "ffmpeg -i %s -ab 160k -ac 2 -ar 44100 -vn new-audio.wav" %filePath
+def convertFileToWav(filePath):
+   command = "ffmpeg -i {} -ab 160k -ac 2 -ar 44100 -vn {}".format(filePath, newFile)
    subprocess.call(command, shell=True)
 
-convertFile(filePath)
-print("File converted to wav.")
+def SplitWav():
+   command = "ffmpeg -i {} -f segment -segment_time 30 -c copy parts/out%09d.wav".format(newFile)
+   subprocess.call(command, shell=True)
+
+if __name__ == '__main__':
+   convertFileToWav(filePath)
+   print("File converted to wav.")
+   SplitWav()
+   print("File split into 30s chunks.")
