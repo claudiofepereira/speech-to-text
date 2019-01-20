@@ -12,3 +12,4 @@
 # Dreamy To-Do:
 - Implement a way to reduce background noise.
 - Make this program accessible as a webapp.
+- Implement a way to count when each sentence is said (in time), in a way as the subtitles work.
