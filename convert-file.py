@@ -9,8 +9,7 @@ import sys
 filePath = sys.argv[1]
 
 def convertFile(filePath):
-   command = "ffmpeg -i %s -ab 160k -ac 2 -ar 44100 -vn new-audio.wav" % filePath
-   print(command)
+   command = "ffmpeg -i %s -ab 160k -ac 2 -ar 44100 -vn new-audio.wav" %filePath
    subprocess.call(command, shell=True)
 
 convertFile(filePath)
