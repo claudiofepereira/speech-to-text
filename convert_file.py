@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 # Receives as an argument, an .mp4 file and converts it into .wav
-# IMmplemented a way to split audio file into chunks of 30seconds
+# Implemented a way to split audio file into chunks of 30 seconds
 
 #TO-DO:
 #Break the audio file into chunks of 30seconds
