@@ -2,7 +2,7 @@
 - For now, can only use .mp4 and .wav files.
 
 # Problems:
-- If the 30s chunk doesn't have any audio, google recognition will throw an error. Solution right now is to delete the last chunk.
+- If a chunk has no audio, program will throw an error. 
 
 # To-Do:
 - [ ] Make the program accept files as an argument - import convert.py to the speech2text.py.
